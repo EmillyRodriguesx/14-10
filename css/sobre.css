@@ -1,0 +1,119 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #d32f2f; /* Vermelho */
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+/* Menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #b71c1c; /* Vermelho escuro */
+  transform: scale(1.05);
+}
+
+/* Main */
+main {
+  flex-grow: 1;
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Seção Sobre */
+.sobre h1 {
+  color: #d32f2f;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.sobre p {
+  color: #333;
+  font-size: 1.15rem;
+  margin-bottom: 15px;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* Rodapé */
+footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 18px 20px;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+
+  .sobre h1 {
+    font-size: 2rem;
+  }
+
+  .sobre p {
+    font-size: 1rem;
+  }
+}
