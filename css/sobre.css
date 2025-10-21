@@ -1,119 +1,151 @@
-/* Reset básico */
+/* ================================================= */
+/* ARQUIVO FINAL: css/style.css                      */
+/* Estilos para o site Cadeiras Domus Élégance       */
+/* ================================================= */
+
+/* 1. VARIÁVEIS DE CORES E RESET */
+:root {
+  --vermelho-principal: #C70039; /* Vermelho forte para destaque */
+  --preto-principal: #1C1C1C;    /* Preto profundo para texto e fundo do header/footer */
+  --branco: #FFFFFF;
+  --cinza-claro: #F4F4F4;        /* Fundo suave para seções de conteúdo */
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Corpo da página */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
-  color: #222;
+  font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  color: var(--preto-principal);
+  background-color: var(--branco);
 }
 
-/* Cabeçalho */
+/* 2. TIPOGRAFIA GERAL */
+h1, h2, h3 {
+  margin-bottom: 0.5em;
+  font-family: 'Georgia', serif;
+  color: var(--preto-principal);
+}
+
+/* Container (Ajuste para garantir centralização, embora não usado em todas as seções deste HTML) */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* 3. CABEÇALHO (HEADER) E NAVEGAÇÃO */
+
 header {
-  background-color: #d32f2f; /* Vermelho */
-  padding: 15px 20px;
+  background: var(--preto-principal);
+  color: var(--branco);
+  padding: 1rem 5%;
+  border-bottom: 5px solid var(--vermelho-principal);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  align-items: center;
 }
 
+/* Estilo do Logo (para a imagem) */
 .logo img {
-  max-height: 50px;
+  height: 40px; 
+  width: auto;
+  /* Filtrar a imagem para tentar combinar com o esquema de cores escuro (opcional, mas recomendado para logos) */
+  filter: brightness(0.9) invert(1);
 }
 
-/* Menu */
+/* Navegação */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
 }
 
 nav ul li a {
-  color: white;
+  color: var(--branco);
   text-decoration: none;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 nav ul li a:hover,
-nav ul li a.active {
-  background-color: #b71c1c; /* Vermelho escuro */
-  transform: scale(1.05);
+nav ul li a.active { /* 'active' usado no 'sobre.html' */
+  color: var(--vermelho-principal);
 }
 
-/* Main */
-main {
-  flex-grow: 1;
-  padding: 40px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
+/* 4. ESTILO ESPECÍFICO PARA PÁGINAS INTERNAS (SOBRE E CONTATO) */
+
+/* Estilo para a seção "Sobre a Empresa" ou "Contato" */
+.sobre, .contato {
+  max-width: 900px; /* Limita a largura do texto para leitura */
+  margin: 40px auto; /* Centraliza o bloco na página */
+  padding: 20px 5%; 
+  background-color: var(--branco); /* Fundo branco para garantir legibilidade */
 }
 
-/* Seção Sobre */
-.sobre h1 {
-  color: #d32f2f;
-  margin-bottom: 20px;
-  font-size: 2.5rem;
-  font-weight: 700;
+.sobre h1, .contato h1 {
+  color: var(--vermelho-principal);
+  border-bottom: 3px solid var(--cinza-claro);
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  font-size: 2.2em;
 }
 
-.sobre p {
-  color: #333;
-  font-size: 1.15rem;
-  margin-bottom: 15px;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
+.sobre p, .contato p {
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+  text-align: justify;
 }
 
-/* Rodapé */
+/* 5. RODAPÉ (FOOTER) */
+
 footer {
-  background-color: #000;
-  color: white;
+  background: var(--preto-principal);
+  color: var(--branco);
   text-align: center;
-  padding: 18px 20px;
-  font-size: 0.9rem;
-  margin-top: auto;
+  padding: 1.5rem 0;
+  font-size: 0.9em;
+  margin-top: 50px; /* Espaço antes do rodapé para não ficar grudado */
 }
 
-/* Responsividade */
+/* 6. RESPONSIVIDADE (Ajustes para Mobile) */
+
 @media (max-width: 768px) {
+  
   header {
-    justify-content: center;
+      flex-direction: column; 
+      text-align: center;
+      padding-bottom: 10px;
+  }
+
+  .logo {
+      margin-bottom: 15px;
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+      flex-direction: column;
+      width: 100%;
   }
 
-  main {
-    padding: 20px 15px;
+  nav ul li {
+      margin: 5px 0;
+  }
+  
+  nav ul li a {
+      padding: 5px 0;
   }
 
-  .sobre h1 {
-    font-size: 2rem;
+  .sobre h1, .contato h1 {
+      font-size: 1.8em;
   }
-
-  .sobre p {
-    font-size: 1rem;
+  
+  .sobre, .contato {
+      padding: 10px;
+      margin: 20px auto;
   }
 }

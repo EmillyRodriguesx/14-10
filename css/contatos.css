@@ -1,0 +1,60 @@
+/* ================================================= */
+/* NOVO BLOCO: 5. ESTILO DO FORMULÁRIO (CONTATO)     */
+/* Adicione isso ao seu css/style.css                */
+/* ================================================= */
+
+/* Estiliza os campos de input e textarea */
+.contato form input[type="text"],
+.contato form input[type="email"],
+.contato form textarea {
+    width: 100%; /* Ocupa a largura total da seção */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
+    font-size: 1em;
+}
+
+/* Estiliza o botão de Enviar */
+.contato form button[type="submit"] {
+    display: inline-block;
+    background: var(--vermelho-principal);
+    color: var(--branco);
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.contato form button[type="submit"]:hover {
+    background: #A0002C; /* Tom mais escuro de vermelho no hover */
+}
+
+/* Estiliza as labels (títulos dos campos) */
+.contato form label {
+    display: block; /* Garante que o label fique acima do campo */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--preto-principal);
+}
+
+/* Estiliza o Atendimento Exclusivo */
+.contato h2 {
+    margin-top: 40px;
+    color: var(--preto-principal);
+    font-size: 1.8em;
+}
+
+.contato p strong {
+    color: var(--vermelho-principal); /* Destaca o título do dado de contato */
+}
+
+/* ================================================= */
+/* FIM DO NOVO BLOCO                                 */
+/* ================================================= */
